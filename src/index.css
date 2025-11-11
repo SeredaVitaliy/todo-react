@@ -1,0 +1,156 @@
+/* ======= GENERAL ======= */
+:root {
+  --bg: #0e0e14;
+  --card: #181821;
+  --accent: #6f6cff;
+  --accent-light: #8c89ff;
+  --text: #ffffff;
+  --text-muted: #6d6d80;
+  --radius: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ======= WRAPPER ======= */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.todo-wrapper {
+  width: 420px;
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ======= TITLE ======= */
+.todo-title {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* ======= INPUT FORM ======= */
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  outline: none;
+  border: 2px solid transparent;
+  background: #232331;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.todo-input:focus {
+  border-color: var(--accent);
+}
+
+.todo-add-btn {
+  height: 46px;
+  width: 46px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 1.6rem;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-add-btn:hover {
+  background: var(--accent-light);
+}
+
+/* ======= TODO LIST ======= */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  background: #20202e;
+  padding: 12px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.todo-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.todo-check input {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Delete button */
+.todo-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.todo-delete:hover {
+  color: #ff4d4d;
+}
+
+/* ======= FOOTER ======= */
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.todo-clear {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.todo-clear:hover {
+  color: var(--accent);
+}
