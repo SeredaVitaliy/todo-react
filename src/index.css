@@ -138,6 +138,13 @@ body {
 }
 
 /* ======= FOOTER ======= */
+.footer {
+  background-color: var(--accent);
+  text-align: center;
+  font-weight: 400;
+  padding: 1rem;
+}
+
 .todo-footer {
   display: flex;
   justify-content: space-between;
