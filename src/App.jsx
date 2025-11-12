@@ -37,6 +37,10 @@ export function App() {
     );
   }
 
+  function handleDeleteAllItem() {
+    setItem([]);
+  }
+
   return (
     <div className="todo-wrapper">
       <h1>To-Do List</h1>
@@ -45,6 +49,7 @@ export function App() {
         item={item}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggeItem}
+        onDeleteAllItem={handleDeleteAllItem}
       />
       <Stats item={item} />
     </div>
@@ -81,7 +86,7 @@ function Form({ onAddItems }) {
   );
 }
 
-function Itemlist({ item, onDeleteItem, onToggleItem }) {
+function Itemlist({ item, onDeleteItem, onToggleItem, onDeleteAllItem }) {
   const [sortBy, setSortBy] = useState("input");
 
   let sortedItems;
@@ -119,7 +124,9 @@ function Itemlist({ item, onDeleteItem, onToggleItem }) {
             <option value="active">Сортировка по алфавиту</option>
             <option value="completed">Сотировка по выполнению</option>
           </select>
-          <button className="todo-reset">Очистить поле</button>
+          <button className="todo-reset" onClick={onDeleteAllItem}>
+            Очистить поле
+          </button>
         </div>
       </>
     );
