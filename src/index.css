@@ -161,3 +161,40 @@ body {
 .todo-clear:hover {
   color: var(--accent);
 }
+
+.todo-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-select,
+.todo-reset {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-select {
+  background: #232331;
+  color: var(--text);
+  appearance: none;
+}
+
+.todo-select:focus {
+  border-color: var(--accent);
+}
+
+.todo-reset {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.todo-reset:hover {
+  background: var(--accent-light);
+}
